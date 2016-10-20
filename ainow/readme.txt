@@ -12,7 +12,7 @@ This plugin will save you time by suggesting the right posts to the right reader
 
 == Description ==
 
-<p>This plugin is great for story tellers which have want to say and most of all want to share their stories in their blogs!</p>
+<p>This plugin is great for story tellers which have what to say and most of all want to share their stories in their blogs!</p>
 
 <p>The idea of the AINOW plugin is very simple...</p>
 <p>You are writing amazing stories for different themes from the world society. But with the time those stories become so many that your readers have <strong>lost their path of interest</strong>... Some of them even messaged you that you storyline is getting badder and harder for reading...</p>
