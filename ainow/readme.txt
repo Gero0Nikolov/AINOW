@@ -1,7 +1,7 @@
 === Plugin Name ===
-Contributors: geronikolov
+Contributors: GeroNikolov
 Donate link: http://dloober.com
-Tags: posts, artificial intelligence, blog, listing, tracking, post navigation, smart suggestions
+Tags: posts, artificial intelligence, blog, listing, tracking, post navigation, smart suggestions, open source
 Requires at least: 3.0.1
 Tested up to: 4.6.1
 Stable tag: 1.0
