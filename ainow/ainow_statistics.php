@@ -1,7 +1,7 @@
 <div class="wrap">
 	<h1>AINOW - Statistics</h1>
 	<h3 id="ainow-legend-controller">Legend<span id="indentifier">+</span></h3>
-	<a href="http://dloober.com/writing-posts-ainow/" id="ainow-help" target="_blank"><h3>How to write the posts?</h3></a>
+	<a href="http://dloober.com/writing-stories-ainow-plugin/" id="ainow-help" target="_blank"><h3>How to write the posts?</h3></a>
 	<div id="ainow-legend">		
 		<p>In the table below are listed all posts which were <em>"hitted"</em> by your visitors.</p>
 		<h3>User UID</h3>
