@@ -39,21 +39,22 @@
 		$sql_ = "SELECT * FROM $ainow_table ORDER BY user_interests_hits DESC";
 		$ainow_statistics = $wpdb->get_results( $sql_, OBJECT );
 
-		foreach ( $ainow_statistics as $statistic_ ) {
-			$ip_tracker_ = unserialize( file_get_contents( 'http://ip-api.com/php/'. $statistic_->user_ip ) );
-			?>
-			<tr>
-				<td title="<?php echo $statistic_->user_uid; ?>"><?php echo $statistic_->user_uid; ?></td>
-				<td title="<?php echo $statistic_->user_ip; ?>"><?php echo $statistic_->user_ip; ?></td>
-				<td title="<?php echo $statistic_->user_interests; ?>"><?php echo $statistic_->user_interests; ?></td>
-				<td title="<?php echo $statistic_->user_interests_hits; ?>"><?php echo $statistic_->user_interests_hits; ?></td>
-				<td title="<?php echo $ip_tracker_[ "country" ]; ?>"><?php echo $ip_tracker_[ "country" ]; ?></td>
-				<td title="<?php echo $ip_tracker_[ "city" ]; ?>"><?php echo $ip_tracker_[ "city" ]; ?></td>
-				<td title="<?php echo $ip_tracker_[ "regionName" ]; ?>"><?php echo $ip_tracker_[ "regionName" ]; ?></td>
-				<td title="<?php echo $ip_tracker_[ "zip" ]; ?>"><?php echo $ip_tracker_[ "zip" ] ?></td>
-			</tr>
-			<?php
-		}
-		?>		
-	</table>
+               foreach ( $ainow_statistics as $statistic_ ) {
+                       $ip          = filter_var( $statistic_->user_ip, FILTER_VALIDATE_IP );
+                       $ip_tracker_ = $ip ? unserialize( file_get_contents( 'http://ip-api.com/php/' . $ip ) ) : array();
+                       ?>
+                       <tr>
+                               <td title="<?php echo esc_attr( $statistic_->user_uid ); ?>"><?php echo esc_html( $statistic_->user_uid ); ?></td>
+                               <td title="<?php echo esc_attr( $statistic_->user_ip ); ?>"><?php echo esc_html( $statistic_->user_ip ); ?></td>
+                               <td title="<?php echo esc_attr( $statistic_->user_interests ); ?>"><?php echo esc_html( $statistic_->user_interests ); ?></td>
+                               <td title="<?php echo esc_attr( $statistic_->user_interests_hits ); ?>"><?php echo esc_html( $statistic_->user_interests_hits ); ?></td>
+                               <td title="<?php echo esc_attr( $ip_tracker_['country'] ); ?>"><?php echo esc_html( $ip_tracker_['country'] ); ?></td>
+                               <td title="<?php echo esc_attr( $ip_tracker_['city'] ); ?>"><?php echo esc_html( $ip_tracker_['city'] ); ?></td>
+                               <td title="<?php echo esc_attr( $ip_tracker_['regionName'] ); ?>"><?php echo esc_html( $ip_tracker_['regionName'] ); ?></td>
+                               <td title="<?php echo esc_attr( $ip_tracker_['zip'] ); ?>"><?php echo esc_html( $ip_tracker_['zip'] ); ?></td>
+                       </tr>
+                       <?php
+               }
+               ?>
+        </table>
 </div>
